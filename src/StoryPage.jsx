@@ -17,8 +17,8 @@ const CHAPTERS = [
     photoLabels: ['Baby days ✨', 'First smile 💕', 'Little explorer 🌸', 'Pure joy 🌊'],
     body: [
       `In a world full of wonder and wide-eyed magic, a tiny girl arrived and changed everything.`,
-      `She laughed at clouds, talked to butterflies, and found treasure in every puddle she jumped into. The world was her playground, and she was its brightest spark.`,
-      `Every bedtime story ended with her already dreaming of the next adventure. ✨`,
+      `She was cute, beautiful a bit stubborn but was loved by everyone and cared by her bestfriends.`,
+      `✨`,
     ],
   },
   {
@@ -30,8 +30,8 @@ const CHAPTERS = [
     photoLabels: ['School days 📚', 'Best pals 🌻', 'Adventures 🎨'],
     body: [
       `She grew a little taller every year, and her curiosity grew even faster.`,
-      `School days meant crayon drawings and best friends made on the very first day. She was the one who always had a question, who read books under the blanket with a torch.`,
-      `She believed absolutely anything was possible — because nobody had told her otherwise yet. 🌿`,
+      `School days meant leading assemblies having healthy competition and best friends made through those competitions. She was always in top in her class.`,
+      `Through chaos and things she got her way out through everything. 🌿`,
     ],
   },
   {
@@ -43,8 +43,7 @@ const CHAPTERS = [
     photoLabels: ['Classroom laughs 😄', 'Bestie moments 💜', 'Fun memories 🎭'],
     body: [
       `The school corridor became a second home.`,
-      `Friendships forged over shared lunch boxes and whispered gossip in the back row turned into bonds that would last lifetimes.`,
-      `She discovered passions she didn't know she had — a love of music, a flair for words, a stubbornness to never give up. Every test, every stage moment — she showed up fully. 🎵`,
+      `Friendships forged over shared lunch boxes and whispered gossip in the back row turned into bonds that would last lifetimes those samosas from the school canteen the fights to sit beside you or near you(the rounder incident to be specific).`,
     ],
   },
   {
@@ -52,12 +51,12 @@ const CHAPTERS = [
     layout: 'ch4',
     era: 'Class 12th',
     title: 'The Final Bell',
-    photos: ['/maggie.mp4', '/khauf.mp4', '/teen.jpeg'],
+    photos: ['/maggie.mp4', '/khauf.mp4', '/precious.mp4'],
     photoLabels: ['Study nights ☕', 'Exam season 📝', 'Results day 🏆'],
     body: [
       `Class 12. The year everything felt impossibly big.`,
-      `Late nights with textbooks, stress that could fill an ocean, and the bittersweet knowledge that this chapter was ending. She sat through exams with her pen trembling but her heart steady.`,
-      `And when results came in — she exhaled. Because she had done it. On her own terms. In her own way. 🔑`,
+      `Late nights with textbooks, stress that could fill an ocean, and the bittersweet knowledge that this chapter was ending. Friends getting apart starting new phase of life.`,
+      `And when results came in she exhaled. Because she had done it. On her own terms. In her own way. 🔑`,
     ],
   },
   {
@@ -69,7 +68,7 @@ const CHAPTERS = [
     photoLabels: ['First day 🌅', 'Hostel fun 🎉', 'Self-care 🧴'],
     body: [
       `College. A completely new galaxy.`,
-      `New faces, new freedom, new versions of herself she hadn't met yet. The first year was a glorious chaos — figuring out schedules, making friends who felt like family within weeks.`,
+      `New faces, new freedom, new versions of herself she hadn't met yet. The first year was a glorious chaos figuring out schedules, making friends who felt like family within weeks.`,
       `It was terrifying. It was exhilarating. It was the beginning of everything. 🌍`,
     ],
   },
@@ -82,7 +81,7 @@ const CHAPTERS = [
     photoLabels: ['Late nights 🌙', 'Pure joy 🌸', 'Her glow up ✨'],
     body: [
       `Second year arrived and she knew the corridors, knew the faces, knew herself a little better.`,
-      `She chased the things that lit her up — the late-night conversations, the spontaneous trips, the projects that kept her up until 3am because she actually cared.`,
+      `She chased the things that lit her up the late-night conversations, the spontaneous trips, the projects that kept her up until 3am because she actually cared.`,
       `She learned that growing up isn't a straight line, and she was perfectly okay with her wonderfully winding path. 🌺`,
     ],
   },
@@ -108,7 +107,7 @@ const CHAPTERS = [
     photos: ['/graduation.jpeg', '/sundar.mp4', '/mba.jpeg'],
     photoLabels: ['Your journey 💝', 'Your smile 🌟', 'You, today 🎂'],
     body: [
-      `Four years of memories, laughter, lessons, and pure magic—and here you are, shining brighter than ever.`,
+      `Four years of memories, laughter, lessons, and pure magic and here you are, shining brighter than ever.`,
       `Today, on this very special birthday, here's to everything you’ve been, everything you are, and the incredible journey waiting ahead.`,
       `May your year ahead be as bright, beautiful, and unforgettable as you are.`,
       `Happy Birthday, Vidhi! 🎉 ✨`,
@@ -421,7 +420,7 @@ function SecretPage() {
           <h1 className="secret-title">Happy Birthday, Vidhi</h1>
           <div className="secret-divider" />
           <div className="secret-message">
-            <p>Behind all the chapters, the milestones, and the memories, there is you—someone truly irreplaceable.</p>
+            <p>Behind all the chapters, the milestones, and the memories, there is you someone truly irreplaceable.</p>
             <p>Having you in my life makes everything brighter, lighter, and so much more meaningful. Thank you for simply being you, for your genuine warmth, your laughter, and every little moment we share.</p>
             <p className="secret-highlight">Here’s to celebrating you today and always. Wishing you the happiest birthday and the most beautiful year ahead. ✨</p>
           </div>

@@ -75,11 +75,11 @@ export default function DateReveal({ onNext }) {
       {/* Popping Date Display */}
       <div className="date-container">
         <h1 className="date-text">
-          <span>27</span>
+          <span>04</span>
           <span className="date-slash">/</span>
-          <span>07</span>
+          <span>10</span>
           <span className="date-slash">/</span>
-          <span>06</span>
+          <span>04</span>
         </h1>
       </div>
 

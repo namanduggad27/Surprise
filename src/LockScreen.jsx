@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Lock, Unlock, Delete } from 'lucide-react'
 import confetti from 'canvas-confetti'
-import heroImg from './assets/hero.png'
+import cuteImg from './assets/cute.jpg'
 import './LockScreen.css'
 
 export default function LockScreen({ onUnlock }) {
@@ -25,7 +25,7 @@ export default function LockScreen({ onUnlock }) {
     setPasscode(nextCode)
 
     if (nextCode.length === 6) {
-      if (nextCode === '270706') {
+      if (nextCode === '041004') {
         setIsSuccess(true)
         triggerCelebrate()
         setTimeout(() => {
@@ -87,7 +87,7 @@ export default function LockScreen({ onUnlock }) {
             </div>
 
             <div className="polaroid-photo">
-              <img src={heroImg} alt="Happy Birthday Vidhi" />
+              <img src={cuteImg} alt="Happy Birthday Vidhi" />
             </div>
 
             <div className="polaroid-caption">
@@ -166,7 +166,7 @@ export default function LockScreen({ onUnlock }) {
             className="passcode-hint" 
             onClick={() => setShowHint(!showHint)}
           >
-            {showHint ? "✨ Hint: Vidhi's birthday date (DDMMYY - 270706)" : "Need a hint?"}
+            {showHint ? "✨ Hint: 041004" : "Need a hint?"}
           </div>
         </div>
       </div>
