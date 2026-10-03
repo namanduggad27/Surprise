@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import confetti from 'canvas-confetti'
+import togetherImg from './assets/together.jpg'
 import './StoryPage.css'
 
 // ─── Chapter Data ──────────────────────────────────────────────────────────────
@@ -12,8 +13,8 @@ const CHAPTERS = [
     layout: 'ch1',
     era: 'Once Upon a Time',
     title: 'The Little Girl',
-    photos: [null, null, null],
-    photoLabels: ['Baby days ✨', 'First smile 💕', 'Little explorer 🌸'],
+    photos: ['/childhood1.jpeg', '/childhood2.jpeg', '/childhood3.jpeg', '/childhood4.jpg'],
+    photoLabels: ['Baby days ✨', 'First smile 💕', 'Little explorer 🌸', 'Pure joy 🌊'],
     body: [
       `In a world full of wonder and wide-eyed magic, a tiny girl arrived and changed everything.`,
       `She laughed at clouds, talked to butterflies, and found treasure in every puddle she jumped into. The world was her playground, and she was its brightest spark.`,
@@ -25,7 +26,7 @@ const CHAPTERS = [
     layout: 'ch2',
     era: 'Growing Up',
     title: 'Little Steps, Big Dreams',
-    photos: [null, null, null],
+    photos: ['/school.jpeg', '/school1.jpeg', '/teen.jpeg'],
     photoLabels: ['School days 📚', 'Best pals 🌻', 'Adventures 🎨'],
     body: [
       `She grew a little taller every year, and her curiosity grew even faster.`,
@@ -38,8 +39,8 @@ const CHAPTERS = [
     layout: 'ch3',
     era: 'The School Years',
     title: 'Pages & Friendships',
-    photos: [null, null, null],
-    photoLabels: ['Classroom laughs 😄', 'Bestie moments 💜', 'Stage memories 🎭'],
+    photos: ['/cringe.jpg', '/sorry.jpg', '/gossip.mp4'],
+    photoLabels: ['Classroom laughs 😄', 'Bestie moments 💜', 'Fun memories 🎭'],
     body: [
       `The school corridor became a second home.`,
       `Friendships forged over shared lunch boxes and whispered gossip in the back row turned into bonds that would last lifetimes.`,
@@ -51,7 +52,7 @@ const CHAPTERS = [
     layout: 'ch4',
     era: 'Class 12th',
     title: 'The Final Bell',
-    photos: [null, null, null],
+    photos: ['/maggie.mp4', '/khauf.mp4', '/teen.jpeg'],
     photoLabels: ['Study nights ☕', 'Exam season 📝', 'Results day 🏆'],
     body: [
       `Class 12. The year everything felt impossibly big.`,
@@ -64,8 +65,8 @@ const CHAPTERS = [
     layout: 'ch5',
     era: 'College · Year 1',
     title: 'A New World',
-    photos: [null, null, null],
-    photoLabels: ['First day 🌅', 'New friendships 🎉', 'Exploring 🌍'],
+    photos: ['/college1.jpeg', '/hooodie.mp4', '/skincare.mp4'],
+    photoLabels: ['First day 🌅', 'Hostel fun 🎉', 'Self-care 🧴'],
     body: [
       `College. A completely new galaxy.`,
       `New faces, new freedom, new versions of herself she hadn't met yet. The first year was a glorious chaos — figuring out schedules, making friends who felt like family within weeks.`,
@@ -77,8 +78,8 @@ const CHAPTERS = [
     layout: 'ch6',
     era: 'College · Year 2',
     title: 'Finding Her Feet',
-    photos: [null, null, null],
-    photoLabels: ['Late nights 🌙', 'Fun moments 💃', 'Her glow up ✨'],
+    photos: ['/college2.jpeg', '/cute.jpg', '/sundarr.mp4'],
+    photoLabels: ['Late nights 🌙', 'Pure joy 🌸', 'Her glow up ✨'],
     body: [
       `Second year arrived and she knew the corridors, knew the faces, knew herself a little better.`,
       `She chased the things that lit her up — the late-night conversations, the spontaneous trips, the projects that kept her up until 3am because she actually cared.`,
@@ -89,17 +90,28 @@ const CHAPTERS = [
     id: 7,
     layout: 'ch7',
     era: 'College · Year 3',
+    title: 'She Became Herself',
+    photos: ['/sundar.mp4', '/precious.mp4', '/together.jpg'],
+    photoLabels: ['Confidence ✨', 'Precious moments 💖', 'Unstoppable 💫'],
+    body: [
+      `Three years in, and everything fell into place. She wasn’t just navigating the world anymore—she was truly owning it.`,
+      `From late-night talks that felt like therapy to conquering challenges that once felt impossible, Year 3 was where confidence became second nature.`,
+      `She had built friendships that felt like home and discovered the strength she had carried all along. 💜`,
+    ],
+  },
+  {
+    id: 8,
+    layout: 'ch8',
+    era: 'College · Year 4',
     happyLabel: 'HAPPY',
-    title: 'Birthday, Bubo!',
-    signature: 'iloveyou',
-    photos: [null, null, null],
+    title: 'Birthday, Vidhi!',
+    photos: ['/graduation.jpeg', '/sundar.mp4', '/mba.jpeg'],
     photoLabels: ['Your journey 💝', 'Your smile 🌟', 'You, today 🎂'],
     body: [
-      `Three years in, and she's a different person — or maybe she's finally the person she always was.`,
-      `Wiser, warmer, more her. Today, on this very special birthday, here's to the girl who danced in the rain, who stayed up too late and laughed too loud.`,
-      `You are loved more than any page could ever hold.`,
-      `Once again, Happy Birthday, my love! 🎉 ❤️`,
-      `May your day be as wonderful, beautiful, and unforgettable as you are to me. :)`,
+      `Four years of memories, laughter, lessons, and pure magic—and here you are, shining brighter than ever.`,
+      `Today, on this very special birthday, here's to everything you’ve been, everything you are, and the incredible journey waiting ahead.`,
+      `May your year ahead be as bright, beautiful, and unforgettable as you are.`,
+      `Happy Birthday, Vidhi! 🎉 ✨`,
     ],
   },
 ]
@@ -110,7 +122,7 @@ function launchFireworks() {
   const end = Date.now() + duration
   const colors = ['#fde047', '#f472b6', '#a78bfa', '#34d399', '#fb923c', '#fff']
   const frame = () => {
-    confetti({ particleCount: 5, angle: 60,  spread: 55, origin: { x: 0 }, colors })
+    confetti({ particleCount: 5, angle: 60, spread: 55, origin: { x: 0 }, colors })
     confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 }, colors })
     if (Date.now() < end) requestAnimationFrame(frame)
   }
@@ -127,11 +139,67 @@ function PhotoPlaceholder({ label, color = '#fff' }) {
   )
 }
 
-// ─── Photo helpers ─────────────────────────────────────────────────────────────
-function renderImg(src, label, color) {
-  return src
-    ? <img src={src} alt={label} />
-    : <PhotoPlaceholder label={label} color={color} />
+// ─── Dynamic Media Frame & Aspect Ratio ──────────────────────────────────────
+function getMediaAspect(src) {
+  if (!src || typeof src !== 'string') return '3 / 4'
+  if (src.endsWith('.mp4') || src.endsWith('.webm')) return '9 / 16'
+  if (src.includes('cringe') || src.includes('sorry') || src.includes('childhood4')) return '9 / 16'
+  if (src.includes('school.jpeg')) return '4 / 3'
+  return '3 / 4'
+}
+
+function getMediaClass(src) {
+  if (!src || typeof src !== 'string') return 'media-placeholder'
+  if (src.endsWith('.mp4') || src.endsWith('.webm')) return 'is-video is-vertical-9-16'
+  if (src.includes('cringe') || src.includes('sorry') || src.includes('childhood4')) return 'is-photo is-vertical-9-16'
+  if (src.includes('school.jpeg')) return 'is-photo is-landscape'
+  return 'is-photo is-portrait-3-4'
+}
+
+function MediaCard({ src, label, color, className = '' }) {
+  const [naturalAspect, setNaturalAspect] = useState(null)
+  const defaultAspect = getMediaAspect(src)
+  const mediaClass = getMediaClass(src)
+  const isVideo = typeof src === 'string' && (src.endsWith('.mp4') || src.endsWith('.webm'))
+  const resolvedSrc = typeof src === 'string' && src.startsWith('/')
+    ? `${import.meta.env.BASE_URL.replace(/\/$/, '')}${src}`
+    : src
+
+  return (
+    <div
+      className={`${className} ${mediaClass}`}
+      style={{ aspectRatio: naturalAspect || defaultAspect }}
+    >
+      {!src ? (
+        <PhotoPlaceholder label={label} color={color} />
+      ) : isVideo ? (
+        <video
+          src={resolvedSrc}
+          autoPlay
+          loop
+          muted
+          playsInline
+          onLoadedMetadata={(e) => {
+            const { videoWidth, videoHeight } = e.target
+            if (videoWidth && videoHeight) {
+              setNaturalAspect(`${videoWidth} / ${videoHeight}`)
+            }
+          }}
+        />
+      ) : (
+        <img
+          src={resolvedSrc}
+          alt={label}
+          onLoad={(e) => {
+            const { naturalWidth, naturalHeight } = e.target
+            if (naturalWidth && naturalHeight) {
+              setNaturalAspect(`${naturalWidth} / ${naturalHeight}`)
+            }
+          }}
+        />
+      )}
+    </div>
+  )
 }
 
 // ─── Per-chapter Layout Components ────────────────────────────────────────────
@@ -152,12 +220,10 @@ function Chapter1({ chapter, onNext, onRestart, isLast }) {
             <div className="continue-link on-light" onClick={onNext}>→ next memory</div>
           )}
         </div>
-        {/* 3 horizontal photos */}
+        {/* Photos */}
         <div className="ch1-photos">
           {chapter.photos.map((src, i) => (
-            <div key={i} className="photo-cell">
-              {renderImg(src, chapter.photoLabels[i], '#c8a888')}
-            </div>
+            <MediaCard key={i} src={src} label={chapter.photoLabels[i]} color="#c8a888" className="photo-cell" />
           ))}
         </div>
       </div>
@@ -172,9 +238,7 @@ function Chapter2({ chapter, onNext }) {
         {/* Photos LEFT */}
         <div className="ch2-photo-col">
           {chapter.photos.map((src, i) => (
-            <div key={i} className="ch2-photo-frame">
-              {renderImg(src, chapter.photoLabels[i], '#5a8a6a')}
-            </div>
+            <MediaCard key={i} src={src} label={chapter.photoLabels[i]} color="#5a8a6a" className="ch2-photo-frame" />
           ))}
         </div>
         {/* Card RIGHT */}
@@ -209,9 +273,7 @@ function Chapter3({ chapter, onNext }) {
         {/* Scrapbook collage RIGHT */}
         <div className="ch3-scrapbook">
           {chapter.photos.map((src, i) => (
-            <div key={i} className={`s-photo`}>
-              {renderImg(src, chapter.photoLabels[i], '#a878d0')}
-            </div>
+            <MediaCard key={i} src={src} label={chapter.photoLabels[i]} color="#a878d0" className="s-photo" />
           ))}
         </div>
       </div>
@@ -236,9 +298,7 @@ function Chapter4({ chapter, onNext }) {
         {/* Photos RIGHT stacked */}
         <div className="ch4-photo-col">
           {chapter.photos.map((src, i) => (
-            <div key={i} className="ch4-single-photo">
-              {renderImg(src, chapter.photoLabels[i], '#3a5080')}
-            </div>
+            <MediaCard key={i} src={src} label={chapter.photoLabels[i]} color="#3a5080" className="ch4-single-photo" />
           ))}
         </div>
       </div>
@@ -253,9 +313,7 @@ function Chapter5({ chapter, onNext }) {
         {/* Banner photos TOP */}
         <div className="ch5-photo-strip">
           {chapter.photos.map((src, i) => (
-            <div key={i} className="strip-frame">
-              {renderImg(src, chapter.photoLabels[i], '#a84020')}
-            </div>
+            <MediaCard key={i} src={src} label={chapter.photoLabels[i]} color="#a84020" className="strip-frame" />
           ))}
         </div>
         {/* Floating glass card BELOW */}
@@ -285,14 +343,12 @@ function Chapter6({ chapter, onNext }) {
           <div className="body-text">
             {chapter.body.map((p, i) => <p key={i}>{p}</p>)}
           </div>
-          <div className="continue-link on-dark" style={{ color: 'rgba(255,200,220,0.65)' }} onClick={onNext}>→ the final chapter</div>
+          <div className="continue-link on-dark" style={{ color: 'rgba(255,200,220,0.65)' }} onClick={onNext}>→ onwards to year 3</div>
         </div>
         {/* Photos RIGHT */}
         <div className="ch6-photo-col">
           {chapter.photos.map((src, i) => (
-            <div key={i} className="ch6-photo-frame">
-              {renderImg(src, chapter.photoLabels[i], '#8a4060')}
-            </div>
+            <MediaCard key={i} src={src} label={chapter.photoLabels[i]} color="#8a4060" className="ch6-photo-frame" />
           ))}
         </div>
       </div>
@@ -300,12 +356,37 @@ function Chapter6({ chapter, onNext }) {
   )
 }
 
-function Chapter7({ chapter, onRestart }) {
+function Chapter7({ chapter, onNext }) {
   return (
     <div className="ch7-bg story-wrapper">
       <div className="ch7-layout">
-        {/* Plum glass letter LEFT */}
+        {/* Violet glass letter LEFT */}
         <div className="ch7-letter">
+          <span className="era-tag">{chapter.era}</span>
+          <span className="big-title">{chapter.title}</span>
+          <div className="divider" />
+          <div className="body-text">
+            {chapter.body.map((p, i) => <p key={i}>{p}</p>)}
+          </div>
+          <div className="continue-link on-dark" onClick={onNext}>→ the final chapter</div>
+        </div>
+        {/* Photos RIGHT */}
+        <div className="ch7-photo-col">
+          {chapter.photos.map((src, i) => (
+            <MediaCard key={i} src={src} label={chapter.photoLabels[i]} color="#a855f7" className="ch7-photo-frame" />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Chapter8({ chapter, onNext }) {
+  return (
+    <div className="ch8-bg story-wrapper">
+      <div className="ch8-layout">
+        {/* Plum celebration letter LEFT */}
+        <div className="ch8-letter">
           {chapter.happyLabel && <span className="happy-label">{chapter.happyLabel}</span>}
           <span className="era-tag">{chapter.era}</span>
           <span className="big-title">{chapter.title}</span>
@@ -313,24 +394,14 @@ function Chapter7({ chapter, onRestart }) {
           <div className="body-text">
             {chapter.body.map((p, i) => <p key={i}>{p}</p>)}
           </div>
-          {chapter.signature && (
-            <span className="signature">{chapter.signature} 💋</span>
-          )}
           <button className="celebrate-btn" onClick={launchFireworks}>
             🎉 Celebrate!
           </button>
-          {onRestart && (
-            <span className="restart-link" onClick={onRestart}>
-              ↩ Start from the beginning
-            </span>
-          )}
         </div>
         {/* Glowing photos RIGHT */}
-        <div className="ch7-photo-col">
+        <div className="ch8-photo-col">
           {chapter.photos.map((src, i) => (
-            <div key={i} className="ch7-photo-frame">
-              {renderImg(src, chapter.photoLabels[i], '#6a20a0')}
-            </div>
+            <MediaCard key={i} src={src} label={chapter.photoLabels[i]} color="#6a20a0" className="ch8-photo-frame" />
           ))}
         </div>
       </div>
@@ -338,36 +409,58 @@ function Chapter7({ chapter, onRestart }) {
   )
 }
 
-const LAYOUT_MAP = [Chapter1, Chapter2, Chapter3, Chapter4, Chapter5, Chapter6, Chapter7]
+function SecretPage() {
+  return (
+    <div className="secret-wrapper story-wrapper">
+      <div className="secret-backdrop" style={{ backgroundImage: `url(${togetherImg})` }} />
+      <div className="secret-scrim" />
+
+      <div className="secret-text-overlay">
+        <div className="secret-floating-content">
+          <span className="secret-tag">A Special Note</span>
+          <h1 className="secret-title">Happy Birthday, Vidhi</h1>
+          <div className="secret-divider" />
+          <div className="secret-message">
+            <p>Behind all the chapters, the milestones, and the memories, there is you—someone truly irreplaceable.</p>
+            <p>Having you in my life makes everything brighter, lighter, and so much more meaningful. Thank you for simply being you, for your genuine warmth, your laughter, and every little moment we share.</p>
+            <p className="secret-highlight">Here’s to celebrating you today and always. Wishing you the happiest birthday and the most beautiful year ahead. ✨</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const LAYOUT_MAP = [Chapter1, Chapter2, Chapter3, Chapter4, Chapter5, Chapter6, Chapter7, Chapter8]
 
 // ─── Dot / label colour per chapter ───────────────────────────────────────────
-const DOT_STYLE   = ['on-light','on-dark','on-dark','on-dark','on-light','on-dark','on-dark']
-const LABEL_STYLE = ['dark-text','dark-text','light-text','light-text','dark-text','light-text','light-text']
+const DOT_STYLE = ['on-light', 'on-dark', 'on-dark', 'on-dark', 'on-light', 'on-dark', 'on-dark', 'on-dark']
+const LABEL_STYLE = ['dark-text', 'dark-text', 'light-text', 'light-text', 'dark-text', 'light-text', 'light-text', 'light-text']
 
-// Transition timing must match the longer of the two CSS animation durations (enter = 0.48s)
-const TRANSITION_MS = 480
+// Transition timing matches the fluid CSS animation duration (0.42s = 420ms)
+const TRANSITION_MS = 420
 
 // ─── Main StoryPage ────────────────────────────────────────────────────────────
 export default function StoryPage({ onRestart }) {
   const total = CHAPTERS.length
 
-  // Active (visible) chapter
-  const [current, setCurrent]   = useState(0)
+  // Active index: 0..total-1 for chapters, total (8) for the SecretPage
+  const [current, setCurrent] = useState(0)
   // Departing chapter (null when idle)
-  const [leaving, setLeaving]   = useState(null)
+  const [leaving, setLeaving] = useState(null)
   // Navigation direction: 'right' = forward, 'left' = backward
-  const [dir, setDir]           = useState('right')
+  const [dir, setDir] = useState('right')
   // Guard against rapid clicks during transition
-  const [locked, setLocked]     = useState(false)
+  const [locked, setLocked] = useState(false)
 
   const goTo = useCallback((index, direction = 'right') => {
-    if (index < 0 || index >= total || locked || index === current) return
+    if (index < 0 || index > total || locked || index === current) return
     setLocked(true)
     setDir(direction)
-    setLeaving(current)    // snapshot the outgoing chapter
-    setCurrent(index)      // immediately set new chapter (it starts entering)
-    if (index === total - 1) setTimeout(launchFireworks, 520)
-    // After both animations finish, clear the leaving layer and unlock
+    setLeaving(current)    // snapshot outgoing chapter
+    setCurrent(index)      // set incoming chapter
+    if (index === total - 1) setTimeout(launchFireworks, 460) // Year 4 fireworks!
+    // After transition finishes, unlock
     setTimeout(() => {
       setLeaving(null)
       setLocked(false)
@@ -375,56 +468,78 @@ export default function StoryPage({ onRestart }) {
   }, [current, total, locked])
 
   const goNext = useCallback(() => goTo(current + 1, 'right'), [current, goTo])
-  const goPrev = useCallback(() => goTo(current - 1, 'left'),  [current, goTo])
+  const goPrev = useCallback(() => goTo(current - 1, 'left'), [current, goTo])
+
+  // Always reset scroll on chapter change so each page starts cleanly at top
+  useEffect(() => {
+    const scrollable = document.querySelectorAll(
+      '.ch1-layout, .ch2-layout, .ch3-layout, .ch4-layout, .ch5-layout, .ch6-layout, .ch7-layout, .ch8-layout, .secret-text-overlay'
+    )
+    scrollable.forEach((el) => {
+      el.scrollTop = 0
+    })
+  }, [current])
 
   // Keyboard navigation
   useEffect(() => {
     const h = (e) => {
       if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goNext()
-      if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   goPrev()
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goPrev()
     }
     window.addEventListener('keydown', h)
     return () => window.removeEventListener('keydown', h)
   }, [goNext, goPrev])
 
-  // Touch swipe
+  // Touch swipe — smooth horizontal navigation with vertical scroll protection
   useEffect(() => {
     let sx = 0
-    const onStart = (e) => { sx = e.touches[0].clientX }
-    const onEnd   = (e) => {
-      const dx = e.changedTouches[0].clientX - sx
-      if (dx < -60) goNext()
-      if (dx >  60) goPrev()
+    let sy = 0
+    let active = false
+    const onStart = (e) => {
+      if (e.touches.length !== 1) return
+      sx = e.touches[0].clientX
+      sy = e.touches[0].clientY
+      active = true
     }
-    window.addEventListener('touchstart', onStart)
-    window.addEventListener('touchend',   onEnd)
+    const onEnd = (e) => {
+      if (!active) return
+      active = false
+      const dx = e.changedTouches[0].clientX - sx
+      const dy = e.changedTouches[0].clientY - sy
+      // Only switch chapter if horizontal swipe is intentional and exceeds vertical movement
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+        if (dx < 0) goNext()
+        if (dx > 0) goPrev()
+      }
+    }
+    window.addEventListener('touchstart', onStart, { passive: true })
+    window.addEventListener('touchend', onEnd, { passive: true })
     return () => {
       window.removeEventListener('touchstart', onStart)
-      window.removeEventListener('touchend',   onEnd)
+      window.removeEventListener('touchend', onEnd)
     }
   }, [goNext, goPrev])
 
   // ── Compute animation class names ──────────────────────────────────────────
-  // Incoming chapter: slides in from the direction we came from
   const enterClass = dir === 'right' ? 'slide-enter-from-right' : 'slide-enter-from-left'
-  // Outgoing chapter: exits in the opposite direction
-  const exitClass  = dir === 'right' ? 'slide-exit-to-left'     : 'slide-exit-to-right'
+  const exitClass = dir === 'right' ? 'slide-exit-to-left' : 'slide-exit-to-right'
 
-  const chapter    = CHAPTERS[current]
-  const ChapterUI  = LAYOUT_MAP[current]
-  const dotStyle   = DOT_STYLE[current]
-  const labelStyle = LABEL_STYLE[current]
-  const isLast     = current === total - 1
+  const isSecret = current === total
+  const chapter = isSecret ? null : CHAPTERS[current]
+  const ChapterUI = isSecret ? SecretPage : LAYOUT_MAP[current]
+  const dotStyle = isSecret ? 'on-dark' : DOT_STYLE[current]
+  const labelStyle = isSecret ? 'light-text' : LABEL_STYLE[current]
 
-  const LeavingUI  = leaving !== null ? LAYOUT_MAP[leaving] : null
-  const leavingChapter = leaving !== null ? CHAPTERS[leaving] : null
+  const isLeavingSecret = leaving === total
+  const LeavingUI = isLeavingSecret ? SecretPage : (leaving !== null ? LAYOUT_MAP[leaving] : null)
+  const leavingChapter = isLeavingSecret ? null : (leaving !== null ? CHAPTERS[leaving] : null)
 
   return (
-    // Clip container — never scrolls, never flashes
-    <div style={{ position: 'fixed', inset: 0, overflow: 'hidden' }}>
+    // Clip container — deep tone prevents any light flash during crossfade
+    <div style={{ position: 'fixed', inset: 0, overflow: 'hidden', background: '#0e0616' }}>
 
       {/* ── Outgoing chapter (plays exit animation simultaneously) ── */}
-      {LeavingUI && leavingChapter && (
+      {LeavingUI && (
         <div
           key={`leaving-${leaving}`}
           className={exitClass}
@@ -432,8 +547,9 @@ export default function StoryPage({ onRestart }) {
         >
           <LeavingUI
             chapter={leavingChapter}
-            onNext={() => {}}
-            onRestart={() => {}}
+            onNext={() => { }}
+            onPrev={() => { }}
+            onRestart={() => { }}
             isLast={leaving === total - 1}
           />
         </div>
@@ -448,47 +564,52 @@ export default function StoryPage({ onRestart }) {
         <ChapterUI
           chapter={chapter}
           onNext={goNext}
+          onPrev={goPrev}
           onRestart={onRestart}
-          isLast={isLast}
+          isLast={current === total - 1}
         />
       </div>
 
       {/* ── Persistent UI overlay (always on top, never animates) ── */}
       <div style={{ position: 'fixed', inset: 0, zIndex: 300, pointerEvents: 'none' }}>
 
-        {/* Top chapter label */}
-        <div className="story-top-bar">
-          <span className={`story-chapter-label ${labelStyle}`}>{chapter.era}</span>
-          <span className={`story-chapter-label ${labelStyle}`}>{current + 1} / {total}</span>
-        </div>
+        {/* Top chapter label — hidden on the secret page */}
+        {!isSecret && chapter && (
+          <div className="story-top-bar" key={chapter.id}>
+            <span className={`story-chapter-label ${labelStyle}`}>{chapter.era}</span>
+            <span className={`story-chapter-label ${labelStyle}`}>{current + 1} / {total}</span>
+          </div>
+        )}
 
         {/* Nav arrows */}
         <button
           className="story-nav-btn prev on-dark"
           style={{ pointerEvents: 'auto' }}
           onClick={goPrev}
-          disabled={current === 0 || locked}
+          disabled={current === 0}
           aria-label="Previous chapter"
         >‹</button>
         <button
           className="story-nav-btn next on-dark"
           style={{ pointerEvents: 'auto' }}
           onClick={goNext}
-          disabled={isLast || locked}
+          disabled={isSecret}
           aria-label="Next chapter"
         >›</button>
 
-        {/* Bottom progress dots */}
-        <div className="story-dots" style={{ pointerEvents: 'auto' }}>
-          {CHAPTERS.map((_, i) => (
-            <button
-              key={i}
-              className={`story-dot ${dotStyle} ${i === current ? 'active' : ''}`}
-              onClick={() => goTo(i, i > current ? 'right' : 'left')}
-              aria-label={`Chapter ${i + 1}`}
-            />
-          ))}
-        </div>
+        {/* Bottom progress dots — treats Year 4 as the last page; hidden on secret page */}
+        {!isSecret && (
+          <div className="story-dots" style={{ pointerEvents: 'auto' }}>
+            {CHAPTERS.map((_, i) => (
+              <button
+                key={i}
+                className={`story-dot ${dotStyle} ${i === current ? 'active' : ''}`}
+                onClick={() => goTo(i, i > current ? 'right' : 'left')}
+                aria-label={`Chapter ${i + 1}`}
+              />
+            ))}
+          </div>
+        )}
 
       </div>
     </div>

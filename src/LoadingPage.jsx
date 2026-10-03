@@ -53,7 +53,7 @@ export default function LoadingPage({ onFinish }) {
   const getStatusText = () => {
     if (progress < 25) return "Loading your birthday surprise..."
     if (progress < 55) return "Gathering virtual hugs & wishes..."
-    if (progress < 85) return "Adding extra sparkles for Bubo..."
+    if (progress < 85) return "Adding extra sparkles for Vidhi..."
     if (progress < 100) return "Almost ready! Unwrapping..."
     return "Surprise Ready! 🎉"
   }

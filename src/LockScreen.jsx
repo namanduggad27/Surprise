@@ -87,12 +87,12 @@ export default function LockScreen({ onUnlock }) {
             </div>
 
             <div className="polaroid-photo">
-              <img src={heroImg} alt="Happy Birthday Bubo" />
+              <img src={heroImg} alt="Happy Birthday Vidhi" />
             </div>
 
             <div className="polaroid-caption">
               Happy Birthday!<br />
-              Bubo
+              Vidhi
             </div>
           </div>
         </div>
@@ -166,7 +166,7 @@ export default function LockScreen({ onUnlock }) {
             className="passcode-hint" 
             onClick={() => setShowHint(!showHint)}
           >
-            {showHint ? "✨ Hint: Bubo's birthday date (DDMMYY - 270706)" : "Need a hint?"}
+            {showHint ? "✨ Hint: Vidhi's birthday date (DDMMYY - 270706)" : "Need a hint?"}
           </div>
         </div>
       </div>
